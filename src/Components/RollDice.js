@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Die from "./Die";
 
 const defaultProps = ["one", "two", "three", "four", "five", "six"];
 
@@ -11,10 +12,16 @@ const RollDice = () => {
     defaultProps[Math.floor(Math.random() * defaultProps.length)]
   );
 
+  const rollDice = () => {
+    setDie1(defaultProps[Math.floor(Math.random() * defaultProps.length)]);
+    setDie2(defaultProps[Math.floor(Math.random() * defaultProps.length)]);
+  };
+
   return (
     <div>
-      <div>{die1}</div>
-      <div>{die2}</div>
+      <Die num={die1} />
+      <Die num={die2} />
+      <button onClick={() => rollDice()}>Roll!</button>
     </div>
   );
 };
