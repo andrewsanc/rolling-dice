@@ -3,7 +3,11 @@ import "./Die.css";
 
 const Die = ({ num, rolling }) => {
   return (
-    <i className={`Die fas fa-dice-${num} ${rolling ? "Shaking" : ""}`}></i>
+    <i
+      className={` ${rolling ? `Die fas fa-dice` : `Die fas fa-dice-${num}`} ${
+        rolling ? "Shaking" : ""
+      }`}
+    ></i>
   );
 };
 
