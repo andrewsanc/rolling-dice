@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Die from "./Die";
+import "./RollDice.css";
 
 const defaultProps = ["one", "two", "three", "four", "five", "six"];
 
@@ -20,10 +21,12 @@ const RollDice = () => {
   };
 
   return (
-    <div>
-      <Die num={die1} />
-      <Die num={die2} />
-      <button onClick={() => rollDice()}>
+    <div className='RollDice'>
+      <div className='RollDice-container'>
+        <Die num={die1} />
+        <Die num={die2} />
+      </div>
+      <button className='button' onClick={() => rollDice()}>
         {rolling ? "Rolling..." : "Roll"}
       </button>
     </div>
