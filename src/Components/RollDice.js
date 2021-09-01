@@ -23,10 +23,10 @@ const RollDice = () => {
   return (
     <div className='RollDice'>
       <div className='RollDice-container'>
-        <Die num={die1} />
-        <Die num={die2} />
+        <Die num={die1} rolling={rolling} />
+        <Die num={die2} rolling={rolling} />
       </div>
-      <button className='button' onClick={() => rollDice()}>
+      <button className='button' onClick={() => rollDice()} disabled={rolling}>
         {rolling ? "Rolling..." : "Roll"}
       </button>
     </div>
